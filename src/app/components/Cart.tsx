@@ -13,12 +13,12 @@ const Cart = () => {
 
     const i={id:index,
         productName:`x`+index,
-        quantity:2,
+        quantity:index,
         price:10000}
     dispatch(addToCart(i));
   };
 
-  const handleRemoveFromCart = (id) => {
+  const handleRemoveFromCart = (id:number) => {
     dispatch(removeFromCart(id));
   };
 

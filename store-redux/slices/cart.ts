@@ -31,15 +31,28 @@ export const cartSlice=createSlice({
             }
 
         },
-        removeFromCart(state,action:PayloadAction<number>){
-            // const itemIndex=state.items.findIndex(item=>{item.id==action.payload.id});
-            // if(itemIndex>=0){
-
-            // }
-            state.items=state.items.filter(item=>{item.id==action.payload})
-          
-
+        removeFromCart(state, action: PayloadAction<number>) {
+            console.log(state.items);
+        
+            // Find the index of the item to be removed
+            const itemIndex = state.items.findIndex(item => item.id === action.payload);
+            
+            // Check if the item exists in the cart
+            if (itemIndex !== -1) {
+                const item = state.items[itemIndex];
+        
+                // If quantity is 1, remove the item from the cart
+                if (item.quantity === 1) {
+                    state.items = state.items.filter(item => item.id !== action.payload);
+                } else {
+                    // Otherwise, decrement the quantity
+                    item.quantity -= 1;
+                }
+            } else {
+                console.warn("Item not found in cart");
+            }
         }
+        
 
     }
 })

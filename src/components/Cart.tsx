@@ -1,8 +1,9 @@
 // app/components/Cart.tsx
 'use client'; // Ensure this is at the top
 
+import { addToCart, removeFromCart } from '@/redux/slices/cart';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart } from '../../../store-redux/slices/cart';
+
 
 const Cart = () => {
   const dispatch = useDispatch();

@@ -1,17 +1,15 @@
-import { Provider } from "react-redux";
-import { store } from "../../store-redux/store";
-import { ReduxProvider } from "../../store-redux/Provider";
+import { ReduxProvider } from "@/redux/Provider";
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-<ReduxProvider>
-
-<html lang="fa">
+    <ReduxProvider>
+      <html lang="fa">
         <body>
           {children}
         </body>
       </html>
-</ReduxProvider>
+    </ReduxProvider>
 
 
   );

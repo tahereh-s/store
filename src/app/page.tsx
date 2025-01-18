@@ -1,6 +1,8 @@
 // Ensure this is at the top
 
-import Cart from "./components/Cart";
+import Cart from "@/components/Cart";
+
+
 
 export default function Home() {
   return (
